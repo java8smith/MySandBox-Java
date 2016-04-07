@@ -7,11 +7,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.javasmith.hackerrank</groupId>
-    <artifactId>my-solutions</artifactId>
+    <groupId>com.javasmith.samples</groupId>
+    <artifactId>samples1</artifactId>
     <packaging>jar</packaging>
 
-    <name>my-solutions</name>
+    <name>Samples 1</name>
     <url>http://maven.apache.org</url>
 
     <properties>
