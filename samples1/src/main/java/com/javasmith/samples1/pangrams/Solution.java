@@ -1,5 +1,7 @@
 package com.javasmith.samples1.pangrams;
 
+import java.util.Scanner;
+
 /**
  * Created by Smitha Paramanandan on 4/7/2016.
  * (Pangrams are sentences constructed by using every letter of the alphabet at least once.)
@@ -24,4 +26,35 @@ package com.javasmith.samples1.pangrams;
  * of the English alphabet.
  */
 public class Solution {
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        String sentence = solution.getInput();
+        if(solution.isPangram(sentence)){
+            System.out.println("pangram");
+        }
+        else {
+            System.out.println("not pangram");
+        }
+    }
+
+    private String getInput() {
+        Scanner sc = new Scanner(System.in);
+        StringBuilder sb = new StringBuilder();
+        sb = sb.append(sc.next());
+        if(sc.hasNextLine() ) {
+            sb = sb.append(sc.nextLine());
+        }
+        return sb.toString();
+    }
+
+    private boolean isPangram(String sentence) {
+        String allLowerCaseSentence = sentence.toLowerCase();
+        for(char i = 'a'; i <= 'z'; i++) {
+            if(allLowerCaseSentence.indexOf(i) < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
