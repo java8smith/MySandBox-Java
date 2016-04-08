@@ -1,9 +1,8 @@
-package com.javasmith.samples1.averybigsum;
+package com.javasmith.samples1.avery.big.sum;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 /**
  * Created by Smitha Paramanandan on 4/7/2016.
