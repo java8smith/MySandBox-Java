@@ -58,11 +58,7 @@ public class Solution {
             if (2 <= N && N <= 10000) {
                 String S = sb.toString();
                 String R = sb.reverse().toString();
-                if (isFunny(S, R, N)) {
-                    out.println("Funny");
-                } else {
-                    out.println("Not Funny");
-                }
+                out.println(isFunny(S, R, N) ? "Funny" : "Not Funny");
             }
         });
 

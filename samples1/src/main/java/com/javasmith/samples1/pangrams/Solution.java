@@ -2,6 +2,8 @@ package com.javasmith.samples1.pangrams;
 
 import java.util.Scanner;
 
+import static java.lang.System.*;
+
 /**
  * Created by Smitha Paramanandan on 4/7/2016.
  * (Pangrams are sentences constructed by using every letter of the alphabet at least once.)
@@ -28,17 +30,11 @@ import java.util.Scanner;
 public class Solution {
 
     public static void main(String[] args) {
-        String sentence = getInput();
-        if(isPangram(sentence)){
-            System.out.println("pangram");
-        }
-        else {
-            System.out.println("not pangram");
-        }
+        out.println(isPangram(getInput()) ? "pangram" : "not pangram");
     }
 
     private static String getInput() {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(in);
         StringBuilder sb = new StringBuilder();
         sb = sb.append(sc.next());
         if(sc.hasNextLine() ) {
