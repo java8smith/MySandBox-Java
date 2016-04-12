@@ -28,9 +28,8 @@ import java.util.Scanner;
 public class Solution {
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        String sentence = solution.getInput();
-        if(solution.isPangram(sentence)){
+        String sentence = getInput();
+        if(isPangram(sentence)){
             System.out.println("pangram");
         }
         else {
@@ -38,7 +37,7 @@ public class Solution {
         }
     }
 
-    private String getInput() {
+    private static String getInput() {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         sb = sb.append(sc.next());
@@ -48,7 +47,7 @@ public class Solution {
         return sb.toString();
     }
 
-    private boolean isPangram(String sentence) {
+    private static boolean isPangram(String sentence) {
         String allLowerCaseSentence = sentence.toLowerCase();
         for(char i = 'a'; i <= 'z'; i++) {
             if(allLowerCaseSentence.indexOf(i) < 0) {

@@ -44,7 +44,6 @@ public class Solution {
         int T = sc.nextInt();
         StringBuilder[] sbArray = new StringBuilder[T];
         if (1 <= T && T <= 10) {
-
             for (int i = 0; i <= T - 1; i++) {
                 StringBuilder sb = new StringBuilder();
                 sb = sb.append(sc.next());
@@ -59,9 +58,7 @@ public class Solution {
             if (2 <= N && N <= 10000) {
                 String S = sb.toString();
                 String R = sb.reverse().toString();
-
-                Solution solution = new Solution();
-                if (solution.isFunny(S, R, N)) {
+                if (isFunny(S, R, N)) {
                     out.println("Funny");
                 } else {
                     out.println("Not Funny");
@@ -71,7 +68,7 @@ public class Solution {
 
     }
 
-    private boolean isFunny(String S, String R, int N) {
+    private static boolean isFunny(String S, String R, int N) {
         boolean result = true;
         for (int j = 1; j < N - 1; j++) {
             int Sj = S.charAt(j);
@@ -80,7 +77,6 @@ public class Solution {
             int Rjminus1 = R.charAt(j - 1);
 
             result &= Math.abs(Sj - Sjminus1) == Math.abs(Rj - Rjminus1);
-
         }
         return result;
     }

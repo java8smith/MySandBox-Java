@@ -38,13 +38,12 @@ public class Solution {
                 input = input.append(" ");
             }
             List<String> values = Arrays.asList(input.toString().split(" "));
-            Solution solution = new Solution();
-            long result = solution.getSum(values);
+            long result = getSum(values);
             System.out.println(result);
         }
     }
 
-    private long getSum(List<String> inputValues) {
+    private static long getSum(List<String> inputValues) {
         return inputValues
                 .stream()
                 .mapToLong(Long::valueOf).sum();
