@@ -1,5 +1,11 @@
 package com.javasmith.samples1.funny.string;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
+import static java.lang.System.in;
+import static java.lang.System.out;
+
 /**
  * Created by Smitha Paramanandan on 4/8/2016.
  * Suppose you have some string S having length N that is indexed from 0 to N−1.
@@ -23,7 +29,7 @@ package com.javasmith.samples1.funny.string;
  * Not Funny
  * Explanation: Test Case 0: S0="acxz"
  * |c−a|=2=|x−z|
- * |x−c|=21=|c−x|
+ * |x−c|=21=|c−x|0000000000000000000000
  * |z−x|=2=|a−c|
  * We print Funny.
  * Test Case 1: S1="bcxz"
@@ -31,4 +37,52 @@ package com.javasmith.samples1.funny.string;
  * We stop evaluating the string (as |c−b|≠|x−z||c−b|≠|x−z|), and print Not Funny.
  */
 public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(in);
+        int T = sc.nextInt();
+        StringBuilder[] sbArray = new StringBuilder[T];
+        if (1 <= T && T <= 10) {
+
+            for (int i = 0; i <= T - 1; i++) {
+                StringBuilder sb = new StringBuilder();
+                sb = sb.append(sc.next());
+                if (sc.hasNextLine()) {
+                    sb = sb.append(sc.nextLine());
+                }
+                sbArray[i] = sb;
+            }
+        }
+        Arrays.asList(sbArray).stream().forEach((sb) -> {
+            int N = sb.length();
+            if (2 <= N && N <= 10000) {
+                String S = sb.toString();
+                String R = sb.reverse().toString();
+
+                Solution solution = new Solution();
+                if (solution.isFunny(S, R, N)) {
+                    out.println("Funny");
+                } else {
+                    out.println("Not Funny");
+                }
+            }
+        });
+
+    }
+
+    private boolean isFunny(String S, String R, int N) {
+        boolean result = true;
+        for (int j = 1; j < N - 1; j++) {
+            int Sj = S.charAt(j);
+            int Sjminus1 = S.charAt(j - 1);
+            int Rj = R.charAt(j);
+            int Rjminus1 = R.charAt(j - 1);
+
+            result &= Math.abs(Sj - Sjminus1) == Math.abs(Rj - Rjminus1);
+
+        }
+        return result;
+    }
+
 }
