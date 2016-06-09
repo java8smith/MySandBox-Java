@@ -29,7 +29,7 @@ import static java.lang.System.out;
  * Not Funny
  * Explanation: Test Case 0: S0="acxz"
  * |c−a|=2=|x−z|
- * |x−c|=21=|c−x|0000000000000000000000
+ * |x−c|=21=|c−x|
  * |z−x|=2=|a−c|
  * We print Funny.
  * Test Case 1: S1="bcxz"
